@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 
+    Made by Liejan Lawrsel M. Luengo with love, the purpose of this is for basic/simple school projects (ICT/Computer Programming).
+    Check my other projects or portfolio at https://liejan.netlify.app/ 
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog (Sample)</title>
+    <meta name="author" content="Liejan Lawrsel Maurin Luengo">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://liejan.netlify.app/Images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://liejan.netlify.app/Images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://liejan.netlify.app/Images/favicon-16x16.png">
+    <link rel="icon" href="https://liejan.netlify.app/Images/favicon.ico">
+</head>
+
+<body style="font-family: system-ui;">
+    <h1>Blog sample in pure HTML <small>(Minimal CSS styling)</small>:</h1>
+    <p>* Note: This is a simple demonstration of common HTML elements used in blogs.</p>
+
+    <hr>
+
+    <h3><strong>Basic Blog Post Layout</strong> (&lt;article&gt;, &lt;header&gt;, &lt;section&gt;, &lt;footer&gt;)</h3>
+    <article style="max-width: 600px;">
+        <header>
+            <h2>Getting Started with Web Development</h2>
+            <p><time datetime="2010-09-18">September 18, 2010</time> — by <strong>Liejan Lawrsel M. Luengo</strong></p>
+        </header>
+
+        <section>
+            <p>Web development is where you combine creativity with technical skills. Whether you are building a personal portfolio or an application, understanding the fundamentals of HTML is the first step!</p>
+            <p>In this post, we will explore the basic building blocks of the web and how you can start your journey as a developer.</p>
+
+            <h4>Why Learn HTML?</h4>
+            <p>HyperText Markup Language is the standard language for creating web pages. It structures the content on the web and works alongside CSS and JavaScript. Basically, HTML is the skeleton.</p>
+
+            <blockquote style="border-left: 4px solid #ccc; margin-left: 0; padding-left: 16px; color: #555;">
+                "This is a quote but I got to gatekeep it" — Me
+            </blockquote>
+
+            <p>Once you master HTML, you can move on to CSS for styling and JavaScript for functionality. The possibilities are endless!</p>
+        </section>
+
+        <footer>
+            <p>Categories: <a href="#">Web Development</a>, <a href="#">HTML</a> &nbsp;|&nbsp; Tags: <a href="#">beginner</a>, <a href="#">tutorial</a></p>
+        </footer>
+    </article>
+
+    <p style="border-top: black solid 1px; width: fit-content; padding-top: 10px; margin-top: 30px;">Code (ready to
+        copy-paste):</p>
+    <pre
+        style="background-color: black; color: white; padding: 15px; border-radius: 8px; font-family: monospace; overflow-x: auto; border: 1px solid #333; width: fit-content;">
+<code>&lt;article&gt;
+  &lt;header&gt;
+    &lt;h2&gt;My blog title&lt;/h2&gt;
+    &lt;p&gt;&lt;time datetime="2010-09-18"&gt;September 18, 2010&lt;/time&gt; — by &lt;strong&gt;your name&lt;/strong&gt;&lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;section&gt;
+    &lt;p&gt;Your paragraph content goes here&lt;/p&gt;
+
+    &lt;h4&gt;A random question&lt;/h4&gt;
+    &lt;p&gt;More paragraph content&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      "Your quote here" — You, probably.
+    &lt;/blockquote&gt;
+  &lt;/section&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;Categories: &lt;a href="#"&gt;Link&lt;/a&gt; &lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/article&gt;</code>
+</pre>
+
+    <hr>
+
+    <h3><strong>Image with Caption</strong> (&lt;figure&gt; & &lt;figcaption&gt;)</h3>
+    <figure>
+        <img src="https://placehold.co/600x300/00FFFF/black?text=Hello+from+Liejan" alt="placeholder" style="max-width: 100%; border-radius: 6px;">
+        <figcaption><em>Figure 1:</em> A placeholder image</figcaption>
+    </figure>
+
+    <p style="border-top: black solid 1px; width: fit-content; padding-top: 10px; margin-top: 30px;">Code (ready to
+        copy-paste):</p>
+    <pre
+        style="background-color: black; color: white; padding: 15px; border-radius: 8px; font-family: monospace; overflow-x: auto; border: 1px solid #333; width: fit-content;">
+<code>&lt;figure&gt;
+  &lt;img src="image.jpg" alt="Description"&gt;
+  &lt;figcaption&gt;&lt;em&gt;Figure 1:&lt;/em&gt; Your caption here.&lt;/figcaption&gt;
+&lt;/figure&gt;</code>
+</pre>
+
+    <hr>
+
+    <h3><strong>Sidebar / Aside Content</strong> (&lt;aside&gt;)</h3>
+    <aside style="background-color: #f5f5f5; padding: 12px 16px; border-radius: 6px; max-width: 300px;">
+        <h4>About Me</h4>
+        <p><strong>Liejan Lawrsel M. Luengo</strong> is a software and web developer.</p>
+        <address>
+            Contact: <a href="mailto:liejlawrsel@gmail.com">liejlawrsel@gmail.com</a>
+        </address>
+    </aside>
+
+    <p style="border-top: black solid 1px; width: fit-content; padding-top: 10px; margin-top: 30px;">Code (ready to
+        copy-paste):</p>
+    <pre
+        style="background-color: black; color: white; padding: 15px; border-radius: 8px; font-family: monospace; overflow-x: auto; border: 1px solid #333; width: fit-content;">
+<code>&lt;aside&gt;
+  &lt;h4&gt;About you&lt;/h4&gt;
+  &lt;p&gt;Your bio goes here&lt;/p&gt;
+  &lt;address&gt;
+    Contact: &lt;a href="mailto:email@example.com"&gt;email@example.com&lt;/a&gt;
+  &lt;/address&gt;
+&lt;/aside&gt;</code>
+</pre>
+
+    <hr>
+
+    <h3><strong>Blog Post Navigation</strong> (&lt;nav&gt; with &lt;a&gt;)</h3>
+    <nav>
+        <a href="#">< Previous Post</a> &nbsp;|&nbsp;
+        <a href="#">Back to Blog</a> &nbsp;|&nbsp;
+        <a href="#">Next Post ></a>
+    </nav>
+
+    <p style="border-top: black solid 1px; width: fit-content; padding-top: 10px; margin-top: 30px;">Code (ready to
+        copy-paste):</p>
+    <pre
+        style="background-color: black; color: white; padding: 15px; border-radius: 8px; font-family: monospace; overflow-x: auto; border: 1px solid #333; width: fit-content;">
+<code>&lt;nav&gt;
+  &lt;a href="#"&gt; < Previous Post&lt;/a&gt;
+  &lt;a href="#"&gt;Back to Blog&lt;/a&gt;
+  &lt;a href="#"&gt;Next Post > &lt;/a&gt;
+&lt;/nav&gt;</code>
+</pre>
+</body>
+
+</html>

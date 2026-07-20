@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 
+    Made by Liejan Lawrsel M. Luengo with love, the purpose of this is for basic/simple school projects (ICT/Computer Programming).
+    Check my other projects or portfolio at https://liejan.netlify.app/ 
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog (Sample)</title>
+    <meta name="author" content="Liejan Lawrsel Maurin Luengo">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://liejan.netlify.app/Images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://liejan.netlify.app/Images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://liejan.netlify.app/Images/favicon-16x16.png">
+    <link rel="icon" href="https://liejan.netlify.app/Images/favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui;
+            background: #ffffff;
+            color: #000000;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #000000;
+        }
+
+        h1 small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #6b7280;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #050505;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            padding-left: 12px;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: gray;
+            margin: 20px 0;
+        }
+
+        .blog-article {
+            max-width: 720px;
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 32px 36px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgb(194, 196, 198);
+        }
+
+        .blog-article header h2 {
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 6px;
+        }
+
+        .blog-article header p {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .blog-article section p {
+            margin-bottom: 16px;
+        }
+
+        .blog-article section h4 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-top: 28px;
+            margin-bottom: 8px;
+        }
+
+        .blog-blockquote {
+            margin: 24px 0;
+            padding: 16px 20px;
+            background: #5e6061;
+            border-radius: 12px;
+            color: #ffffff;
+            font-style: italic;
+            font-size: 1.05rem;
+        }
+
+        .blog-article footer {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.88rem;
+            color: #64748b;
+        }
+
+        .blog-article footer a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .blog-article footer a:hover {
+            text-decoration: underline;
+        }
+
+        .blog-section-title {
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 32px;
+            margin-bottom: 8px;
+            padding-top: 8px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .blog-code-block {
+            align-self: flex-start;
+            background: #000000;
+            color: #ffffff;
+            padding: 20px 24px;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 0.88rem;
+            line-height: 1.65;
+            overflow-x: auto;
+            border: 1px solid #334155;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+            width: fit-content;
+            max-width: 100%;
+        }
+
+        .blog-img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            display: block;
+        }
+
+        figure {
+            max-width: 600px;
+        }
+
+        figcaption {
+            margin-top: 10px;
+            font-size: 0.88rem;
+            color: #64748b;
+            text-align: center;
+        }
+
+        .blog-aside {
+            align-self: flex-start;
+            background: rgb(220, 220, 220);
+            padding: 20px 24px;
+            border-radius: 10px;
+            max-width: 340px;
+        }
+
+        .blog-aside h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .blog-aside p {
+            font-size: 0.92rem;
+            margin-bottom: 8px;
+        }
+
+        .blog-aside address {
+            font-style: normal;
+            font-size: 0.88rem;
+        }
+
+        .blog-aside a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .blog-aside a:hover {
+            text-decoration: underline;
+        }
+
+        nav {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #ffffff;
+            color: #030303;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 1px solid #d1d5db;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        nav a:hover {
+            transform: scale(1.1);
+        }
+
+        .blog-container {
+            max-width: 720px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .blog-container > h1,
+        .blog-container > h3,
+        .blog-container > p,
+        .blog-container > hr {
+            width: 100%;
+        }
+
+        .blog-article {
+            max-width: 100%;
+        }
+
+        .blog-container > h1 {
+            text-align: center;
+        }
+
+        .blog-container > h3 {
+            text-align: left;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 20px 12px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .blog-article {
+                padding: 20px;
+            }
+
+            .blog-article header h2 {
+                font-size: 1.3rem;
+            }
+
+            .blog-code-block {
+                font-size: 0.78rem;
+                padding: 14px 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blog-container">
+    <h1>Blog sample with CSS</h1>
+    <hr>
+    <h3><strong>Basic Blog Post Layout</strong> (&lt;article&gt;, &lt;header&gt;, &lt;section&gt;, &lt;footer&gt;)</h3>
+    <article class="blog-article">
+        <header>
+            <h2>Getting Started with Web Development</h2>
+            <p><time datetime="2010-09-18">September 18, 2010</time> — by <strong>Liejan Lawrsel M. Luengo</strong></p>
+        </header>
+
+        <section>
+            <p>Web development is where you combine creativity with technical skills. Whether you are building a personal portfolio or an application, understanding the fundamentals of HTML is the first step!</p>
+            <p>In this post, we will explore the basic building blocks of the web and how you can start your journey as a developer.</p>
+
+            <h4>Why Learn HTML?</h4>
+            <p>HyperText Markup Language is the standard language for creating web pages. It structures the content on the web and works alongside CSS and JavaScript. Basically, HTML is the skeleton.</p>
+
+            <blockquote class="blog-blockquote">
+                "This is a quote but I got to gatekeep it" — Me
+            </blockquote>
+
+            <p>Once you master HTML, you can move on to CSS for styling and JavaScript for functionality. The possibilities are endless!</p>
+        </section>
+
+        <footer>
+            <p>Categories: <a href="#">Web Development</a>, <a href="#">HTML</a> &nbsp;|&nbsp; Tags: <a href="#">beginner</a>, <a href="#">tutorial</a></p>
+        </footer>
+    </article>
+
+    <p class="blog-section-title">Code (ready to copy-paste):</p>
+    <pre class="blog-code-block">
+<code>&lt;article&gt;
+  &lt;header&gt;
+    &lt;h2&gt;My blog title&lt;/h2&gt;
+    &lt;p&gt;&lt;time datetime="2010-09-18"&gt;September 18, 2010&lt;/time&gt; — by &lt;strong&gt;your name&lt;/strong&gt;&lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;section&gt;
+    &lt;p&gt;Your paragraph content goes here&lt;/p&gt;
+
+    &lt;h4&gt;A random question&lt;/h4&gt;
+    &lt;p&gt;More paragraph content&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      "Your quote here" — You, probably.
+    &lt;/blockquote&gt;
+  &lt;/section&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;Categories: &lt;a href="#"&gt;Link&lt;/a&gt; &lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/article&gt;</code>
+</pre>
+
+    <hr>
+
+    <h3><strong>Image with Caption</strong> (&lt;figure&gt; & &lt;figcaption&gt;)</h3>
+    <figure>
+        <img src="https://placehold.co/600x300/00FFFF/black?text=Hello+from+Liejan" alt="placeholder" class="blog-img">
+        <figcaption><em>Figure 1:</em> A placeholder image</figcaption>
+    </figure>
+
+    <p class="blog-section-title">Code (ready to copy-paste):</p>
+    <pre class="blog-code-block">
+<code>&lt;figure&gt;
+  &lt;img src="image.jpg" alt="Description"&gt;
+  &lt;figcaption&gt;&lt;em&gt;Figure 1:&lt;/em&gt; Your caption here.&lt;/figcaption&gt;
+&lt;/figure&gt;</code>
+</pre>
+
+    <hr>
+
+    <h3><strong>Sidebar / Aside Content</strong> (&lt;aside&gt;)</h3>
+    <aside class="blog-aside">
+        <h4>About Me</h4>
+        <p><strong>Liejan Lawrsel M. Luengo</strong> is a software and web developer.</p>
+        <address>
+            Contact: <a href="mailto:liejlawrsel@gmail.com">liejlawrsel@gmail.com</a>
+        </address>
+    </aside>
+
+    <p class="blog-section-title">Code (ready to copy-paste):</p>
+    <pre class="blog-code-block">
+<code>&lt;aside&gt;
+  &lt;h4&gt;About you&lt;/h4&gt;
+  &lt;p&gt;Your bio goes here&lt;/p&gt;
+  &lt;address&gt;
+    Contact: &lt;a href="mailto:email@example.com"&gt;email@example.com&lt;/a&gt;
+  &lt;/address&gt;
+&lt;/aside&gt;</code>
+</pre>
+
+    <hr>
+
+    <h3><strong>Blog Post Navigation</strong> (&lt;nav&gt; with &lt;a&gt;)</h3>
+    <nav>
+        <a href="#">< Previous Post</a>
+        <a href="#">Back to Blog</a>
+        <a href="#">Next Post ></a>
+    </nav>
+
+    <p class="blog-section-title">Code (ready to copy-paste):</p>
+    <pre class="blog-code-block">
+<code>&lt;nav&gt;
+  &lt;a href="#"&gt; < Previous Post&lt;/a&gt;
+  &lt;a href="#"&gt;Back to Blog&lt;/a&gt;
+  &lt;a href="#"&gt;Next Post > &lt;/a&gt;
+&lt;/nav&gt;</code>
+</pre>
+    </div>
+</body>
+
+</html>

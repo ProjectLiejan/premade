@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 
+    Made by Liejan Lawrsel M. Luengo with love, the purpose of this is for basic/simple school projects (ICT/Computer Programming).
+    Check my other projects or portfolio at https://liejan.netlify.app/ 
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click the Ball (JS)</title>
+    <meta name="author" content="Liejan Lawrsel Maurin Luengo">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://liejan.netlify.app/Images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://liejan.netlify.app/Images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://liejan.netlify.app/Images/favicon-16x16.png">
+    <link rel="icon" href="https://liejan.netlify.app/Images/favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui;
+            background: #ffffff;
+            color: #000000;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 40px;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-align: center;
+            user-select: none;
+        }
+
+        .ball {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: #000000;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: left 0.4s ease, top 0.4s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .ball:hover {
+            transform: scale(1.08);
+        }
+
+        .code-section {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #f9f9f9;
+            border-top: 1px solid #d1d5db;
+            padding: 16px 20px;
+            max-height: 40vh;
+            overflow-y: auto;
+        }
+
+        .code-section summary {
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            user-select: none;
+            color: #111111;
+        }
+
+        .code-section pre {
+            background: #000000;
+            color: #ffffff;
+            padding: 16px 20px;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 0.8rem;
+            line-height: 1.55;
+            overflow-x: auto;
+            margin-top: 12px;
+            border: 1px solid #334155;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Click the ball, it moves!</h1>
+    <div class="ball" id="ball"></div>
+
+    <details class="code-section">
+        <summary>Code (ready to copy-paste):</summary>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Click the Ball&lt;/title&gt;
+    &lt;style&gt;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui;
+            background: #ffffff;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 40px;
+        }
+        h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-align: center;
+            user-select: none;
+        }
+        .ball {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: #000000;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: left 0.4s ease, top 0.4s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+        }
+        .ball:hover { transform: scale(1.08); }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Click the ball, it moves!&lt;/h1&gt;
+    &lt;div class="ball" id="ball"&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+        const Ball = document.getElementById('ball');
+        const BallSize = 60;
+
+        function GetSafePosition() {
+            const WindowWidth = window.innerWidth;
+            const WindowHeight = window.innerHeight;
+            const PositionX = Math.random() * (WindowWidth - BallSize);
+            const PositionY = Math.random() * (WindowHeight - BallSize - 120) + 100;
+            return { PositionX, PositionY };
+        }
+
+        function MoveBallToRandomPosition() {
+            const RandomPosition = GetSafePosition();
+            Ball.style.left = RandomPosition.PositionX + 'px';
+            Ball.style.top = RandomPosition.PositionY + 'px';
+        }
+
+        function ClampBallWithinWindow() {
+            const WindowWidth = window.innerWidth;
+            const WindowHeight = window.innerHeight;
+            let LeftOffset = parseFloat(Ball.style.left) || WindowWidth / 2 - BallSize / 2;
+            let TopOffset = parseFloat(Ball.style.top) || WindowHeight / 2 - BallSize / 2;
+            LeftOffset = Math.max(0, Math.min(LeftOffset, WindowWidth - BallSize));
+            TopOffset = Math.max(100, Math.min(TopOffset, WindowHeight - BallSize - 20));
+            Ball.style.left = LeftOffset + 'px';
+            Ball.style.top = TopOffset + 'px';
+        }
+
+        Ball.style.left = (window.innerWidth / 2 - BallSize / 2) + 'px';
+        Ball.style.top = (window.innerHeight / 2 - BallSize / 2) + 'px';
+
+        Ball.addEventListener('click', MoveBallToRandomPosition);
+        window.addEventListener('resize', ClampBallWithinWindow);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </details>
+
+    <script>
+        const Ball = document.getElementById('ball');
+        const BallSize = 60;
+
+        function GetSafePosition() {
+            const WindowWidth = window.innerWidth;
+            const WindowHeight = window.innerHeight;
+            const PositionX = Math.random() * (WindowWidth - BallSize);
+            const PositionY = Math.random() * (WindowHeight - BallSize - 120) + 100;
+            return { PositionX, PositionY };
+        }
+
+        function MoveBallToRandomPosition() {
+            const RandomPosition = GetSafePosition();
+            Ball.style.left = RandomPosition.PositionX + 'px';
+            Ball.style.top = RandomPosition.PositionY + 'px';
+        }
+
+        function ClampBallWithinWindow() {
+            const WindowWidth = window.innerWidth;
+            const WindowHeight = window.innerHeight;
+            let LeftOffset = parseFloat(Ball.style.left) || WindowWidth / 2 - BallSize / 2;
+            let TopOffset = parseFloat(Ball.style.top) || WindowHeight / 2 - BallSize / 2;
+            LeftOffset = Math.max(0, Math.min(LeftOffset, WindowWidth - BallSize));
+            TopOffset = Math.max(100, Math.min(TopOffset, WindowHeight - BallSize - 20));
+            Ball.style.left = LeftOffset + 'px';
+            Ball.style.top = TopOffset + 'px';
+        }
+
+        Ball.style.left = (window.innerWidth / 2 - BallSize / 2) + 'px';
+        Ball.style.top = (window.innerHeight / 2 - BallSize / 2) + 'px';
+
+        Ball.addEventListener('click', MoveBallToRandomPosition);
+        window.addEventListener('resize', ClampBallWithinWindow);
+    </script>
+</body>
+
+</html>
