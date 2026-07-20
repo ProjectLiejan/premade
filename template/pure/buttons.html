@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 
+    Made by Liejan Lawrsel M. Luengo with love, the purpose of this is for basic/simple school projects (ICT/Computer Programming).
+    Check my other projects or portfolio at https://liejan.netlify.app/ 
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactable Elements</title>
+    <meta name="author" content="Liejan Lawrsel Maurin Luengo">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://liejan.netlify.app/Images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://liejan.netlify.app/Images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://liejan.netlify.app/Images/favicon-16x16.png">
+    <link rel="icon" href="https://liejan.netlify.app/Images/favicon.ico">
+</head>
+
+<body style="font-family: system-ui;">
+    <h1>Interactable Elements in pure HTML <small>(No CSS styling, Minimal JavaScript)</small>:</h1>
+    <p><strong>Heads up!</strong> Some elements in here uses minimal JavaScript code, such as buttons which will execute a simple alert.</p>
+    <hr>
+
+    <h3><strong>Standard Push Button</strong> (&lt;button&gt; / type="button")</h3>
+    <button type="button" onclick="alert('heya there :)')">Press Me</button>
+    <input type="button" value="Input Button">
+
+    <p style="border-top: black solid 1px; width: fit-content; padding-top: 10px; margin-top: 30px;">Code (ready to
+        copy-paste):</p>
+    <pre
+        style="background-color: black; color: white; padding: 15px; border-radius: 8px; font-family: monospace; overflow-x: auto; border: 1px solid #333; width: fit-content;">
+<code>&lt;button type="button" onclick="alert('heya there :)')"&gt;Press Me&lt;/button&gt;
+&lt;input type="button" value="Input Button"&gt;</code>
+</pre>
+
+    <hr>
+
+    <h3><strong>Submit & Reset Buttons</strong> (type="submit" / type="reset")</h3>
+    <form>
+        <input type="text" placeholder="Type something..." value="Liejan">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset Form</button>
+    </form>
+
+    <p style="border-top: black solid 1px; width: fit-content; padding-top: 10px; margin-top: 30px;">Code (ready to
+        copy-paste):</p>
+    <pre
+        style="background-color: black; color: white; padding: 15px; border-radius: 8px; font-family: monospace; overflow-x: auto; border: 1px solid #333; width: fit-content;">
+<code>&lt;form&gt;
+  &lt;input type="text" placeholder="Type something..." value="Liejan"&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+  &lt;button type="reset"&gt;Reset Form&lt;/button&gt;
+&lt;/form&gt;</code>
+</pre>
+
+    <hr>
+
+    <h3><strong>Range Slider</strong> (type="range")</h3>
+    <label for="slider_thingy">Slider (0 to 100):</label>
+    <input type="range" id="slider_thingy" name="slider_thingy" min="0" max="100" value="50" step="5">
+
+    <p style="border-top: black solid 1px; width: fit-content; padding-top: 10px; margin-top: 30px;">Code (ready to
+        copy-paste):</p>
+    <pre
+        style="background-color: black; color: white; padding: 15px; border-radius: 8px; font-family: monospace; overflow-x: auto; border: 1px solid #333; width: fit-content;">
+<code>&lt;label for="slider_thingy"&gt;Slider (0 to 100):&lt;/label&gt;
+&lt;input type="range" id="slider_thingy" name="slider_thingy" min="0" max="100" value="50" step="1"&gt;</code>
+</pre>
+
+    <hr>
+
+    <h3><strong>Slider with Tick Marks</strong> (&lt;datalist&gt;)</h3>
+    <label for="speed">Speed Level:</label>
+    <input type="range" id="speed" name="speed" min="0" max="100" list="tickmarks">
+
+    <datalist id="tickmarks">
+        <option value="0" label="0%"></option>
+        <option value="25" label="25%"></option>
+        <option value="50" label="50%"></option>
+        <option value="75" label="75%"></option>
+        <option value="100" label="100%"></option>
+    </datalist>
+
+    <p style="border-top: black solid 1px; width: fit-content; padding-top: 10px; margin-top: 30px;">Code (ready to
+        copy-paste):</p>
+    <pre
+        style="background-color: black; color: white; padding: 15px; border-radius: 8px; font-family: monospace; overflow-x: auto; border: 1px solid #333; width: fit-content;">
+<code>&lt;label for="speed"&gt;Speed Level:&lt;/label&gt;
+&lt;input type="range" id="speed" name="speed" min="0" max="100" list="tickmarks"&gt;
+
+&lt;datalist id="tickmarks"&gt;
+  &lt;option value="0" label="0%"&gt;&lt;/option&gt;
+  &lt;option value="25" label="25%"&gt;&lt;/option&gt;
+  &lt;option value="50" label="50%"&gt;&lt;/option&gt;
+  &lt;option value="75" label="75%"&gt;&lt;/option&gt;
+  &lt;option value="100" label="100%"&gt;&lt;/option&gt;
+&lt;/datalist&gt;</code>
+</pre>
+
+    <hr>
+
+    <h3><strong>Toggle Checkbox & Radio Buttons</strong> (type="checkbox" / type="radio")</h3>
+    <p>Checkboxes (Multiple selections):</p>
+    <input type="checkbox" id="option1" name="skills" value="HTML" checked>
+    <label for="option1">HTML</label>
+    <input type="checkbox" id="option2" name="skills" value="CSS">
+    <label for="option2">CSS</label>
+
+    <p>Radio Buttons (Only one at a time):</p>
+    <input type="radio" id="gender_m" name="gender" value="male">
+    <label for="gender_m">Male</label>
+    <input type="radio" id="gender_f" name="gender" value="female" checked>
+    <label for="gender_f">Female</label>
+
+    <p style="border-top: black solid 1px; width: fit-content; padding-top: 10px; margin-top: 30px;">Code (ready to
+        copy-paste):</p>
+    <pre
+        style="background-color: black; color: white; padding: 15px; border-radius: 8px; font-family: monospace; overflow-x: auto; border: 1px solid #333; width: fit-content;">
+<code>&lt;!-- Checkboxes --&gt;
+&lt;input type="checkbox" id="option1" name="skills" value="HTML" checked&gt;
+&lt;label for="option1"&gt;HTML&lt;/label&gt;
+&lt;input type="checkbox" id="option2" name="skills" value="CSS"&gt;
+&lt;label for="option2"&gt;CSS&lt;/label&gt;
+
+&lt;!-- Radio Buttons --&gt;
+&lt;input type="radio" id="gender_m" name="gender" value="male"&gt;
+&lt;label for="gender_m"&gt;Male&lt;/label&gt;
+&lt;input type="radio" id="gender_f" name="gender" value="female" checked&gt;
+&lt;label for="gender_f"&gt;Female&lt;/label&gt;</code>
+</pre>
+
+    <hr>
+
+    <h3><strong>Color Picker Button</strong> (type="color")</h3>
+    <label for="colorwheel">Choose Color:</label>
+    <input type="color" id="colorwheel" name="colorwheel" value="#00FFFF">
+
+    <p style="border-top: black solid 1px; width: fit-content; padding-top: 10px; margin-top: 30px;">Code (ready to
+        copy-paste):</p>
+    <pre
+        style="background-color: black; color: white; padding: 15px; border-radius: 8px; font-family: monospace; overflow-x: auto; border: 1px solid #333; width: fit-content;">
+<code>&lt;label for="colorwheel"&gt;Choose Color:&lt;/label&gt;
+&lt;input type="color" id="colorwheel" name="colorwheel" value="#00FFFF"&gt;</code>
+</pre>
+
+    <hr>
+
+    <h3><strong>Expandable Disclosure</strong> (&lt;details&gt; & &lt;summary&gt;)</h3>
+    <details>
+        <summary>Click to reveal secret details</summary>
+        <p>Peekaboo! This section is natively expandable without any JS or CSS, although I still prefer using JS and CSS for dropdowns.</p>
+    </details>
+
+    <p style="border-top: black solid 1px; width: fit-content; padding-top: 10px; margin-top: 30px;">Code (ready to
+        copy-paste):</p>
+    <pre
+        style="background-color: black; color: white; padding: 15px; border-radius: 8px; font-family: monospace; overflow-x: auto; border: 1px solid #333; width: fit-content;">
+<code>&lt;details&gt;
+  &lt;summary&gt;Click to reveal secret details&lt;/summary&gt;
+  &lt;p&gt;This section is natively expandable without any JavaScript or CSS!&lt;/p&gt;
+&lt;/details&gt;</code>
+</pre>
+</body>
+
+</html>
