@@ -5,7 +5,7 @@
 ### How to use
 
 **Option A — Open the website:**  
-Visit https://liejan.netlify.app/temps/ to access all templates!
+Visit https://liejan.netlify.app/templates/ to access all templates!
 
 **Option B — Grab a single file in this repo:**  
 Browse `template/` and open/download any `.html` file directly.
